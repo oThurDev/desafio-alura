@@ -1,13 +1,26 @@
-import React from 'react';
 import './App.css';
 import Home from './components/Home';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Eureka from './components/Eureka';
 
 
-const App: React.FC = () => {
+function App () {
   return (
-    <>
-      <Home />
-    </>
+    <div>
+      <Router>
+        <Routes>
+          <Route 
+            path='/'
+            element={<Home />}
+          />
+
+          <Route 
+            path='/eureka'
+            element={<Eureka />}
+          />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 
